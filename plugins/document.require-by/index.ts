@@ -138,13 +138,13 @@ export default class RequireByPlugin extends Plugin implements PluginInterface {
       {
         title: "Required by",
         description:
-          '<ul class="require-by">' +
+          '<ul class="require-by">' + "\n" +
           requireBy
             .filter(t => {
               return used.has(t.name) ? false : used.add(t.name);
             })
             .map(t => this.getDescription(t))
-            .join("") +
+            .join("\n") + "\n" +
           "</ul>"
       }
     ];
